@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!--add google fonts link for icons-->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down" />  
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=attach_file" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=sentiment_satisfied" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_upward" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=enable" />
+         -->
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <link rel="stylesheet" href="styles.css" > 
+        <title>My Portfolio</title>
+
+    </head>
+        <body id="my-portfolio">
+            <header class="header">
+                <a href="#" class="logo">ANDISWA DLAMINI</a>
+                <nav id="navbar">
+                    <ul>
+                        <li>
+                            <a href="#my-portfolio" >Home</a>
+                        </li>
+                        <li>
+                            <a href="#about-section" >About</a>
+                        </li>
+                        <li>
+                            <a href="#skills-section" >Skills</a>
+                        </li>
+                        <li>
+                           <a href="#my-portfolio" id="profile-link" target="_blank">
+                            Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/andiswa-dlamini-36652a330" >Contact</a>
+                        </li>
+                        <li>
+                            <a class="resume" href="https://1drv.ms/w/c/d4d9b5f23b52dfc0/EdGwK06zkFxJpYOFVPfTDTUBEXVPNqw9KWj1WzPu7VdJPw?e=A3HlfQ" >Resume <i class='bx  bx-save'  ></i></i> </a>
+                        </li>
+                     </ul>
+                </nav>
+            </header>
+
+            <main class="Home">
+                <section id="home-section">
+                    <div class="home-content">
+                      <div id="introduction">
+                           <h3>Hi, It's me </h3>
+                           <h1 id="name">FULL NAME</h1>
+                           <h3>And I'm a <span id="job"></span></h3>
+                           <p style="font-size: 12px;">building responsive web applications with AI-powered functionality.</p>
+                      </div>
+                      <div class="my-picture-div">
+                          <img class="my-picture" alt="my picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfO6zGiarp1IAGPgOMDq-C0qpL6Ggodwoluw&s" >
+                      </div>
+                    </div>
+                    <div class="home-buttons">
+                        <a class="view-projects"><strong>View projects</strong></a>
+                        <a class="contact-me" href="https://www.linkedin.com/in/andiswa-dlamini-36652a330"><strong>Contact Me</strong></a>
+                    </div>
+                    <div class="chatbot-popup hide-popup" id="hide-popup">
+                        <!--chatbot header-->
+                        <div class="chat-header">
+                            <div class="header-info">
+                                <!-- bot icon-->
+                                <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+                                    <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
+                                </svg>
+                                <h2 class="logo-text">Chatbot</h2>
+                            </div>
+                            <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+                        </div>
+                        <div class="chat-body">
+                            <div  class="message bot-message">
+                                <!-- class="bot-avatar" display bot icon with bot text-->
+                                <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+                                    <path d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"></path>
+                                </svg>
+                                <div class="message-text">hey there!<br> How can i help you today?</div>
+                            </div>
+                            <div class="message user-message">
+                                <!--display bot icon with bot text-->
+                            </div>
+                            <div  class="message bot-message">
+                            </div>
+                        </div>                    
+
+                        <div class="chat-footer">
+                            <form class="chat-form">
+                                <textarea id="msgInput" class="message-input" placeholder="message..."></textarea>
+                                <div class="chat-controls">
+                                    <button type="button" id="emoji-btn" class="material-symbols-rounded controls">sentiment_satisfied</button>
+                                    <button type="submit" class="material-symbols-rounded controls send-btn">arrow_upward</button>
+                                    <!-- <button type="button" class="material-symbols-rounded controls">attach_file</button> -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <span class="material-symbols-rounded chat-bubble-icon" id="chat-bubble-icon">
+                    chat
+                </span>
+                <section id="about-section" class="about-section">
+                    <div class="about-content">
+                        <img class="my--second-picture " alt="my picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfO6zGiarp1IAGPgOMDq-C0qpL6Ggodwoluw&s" >
+                     
+                        <div class="about-paragraph-text-container">
+                          <h1>About Me</h1>
+                          <h3>Emerging Software developer</h3> 
+                          <div class="about-paragraph-text">
+                            <p>
+                                Emerging Software developer with a strong foundation in HTML, CSS, JavaScript, Python, C++, and SQL,
+                                currently expanding expertise in React JS. Experienced in building AI-powered web applications
+                                and integrating AI tools into practical solutions. Passionate about developing intelligent, 
+                                scalable systems while continuously advancing technical skills. <!--<button type="submit">read more...</button><div class="hidden">--></div>
+                            </p>
+                          </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section id="skills-section" class="skills-section">
+                    <h1>Skills</h1>
+                    <div class="skills-content">
+                        <div class="programming-languages">
+                            <h1>Programming Languages</h1>
+                            <div class="skill one">
+                                <p>Javascript</p>
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/javascript--v1.png" alt="javascript--v1"/>
+                            </div>
+                            <div class="skill two">
+                                <p>Python</p>
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/python--v1.png" alt="python--v1"/>
+                            </div>
+                            <div class="skill three">
+                                <p>SQL</p>
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/c-plus-plus-logo.png" alt="c-plus-plus-logo"/>
+
+                            </div>
+                            <div class="skill four">
+                                <p>C++</p>
+                                <img width="48" height="48" src="https://img.icons8.com/?size=100&id=J6KcaRLsTgpZ&format=png&color=000000" alt="sql"/>
+                            </div>
+                            <div class="skill five">
+                                <p>Api</p>
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/api-settings.png" alt="api-settings"/>
+                            </div>
+                        </div>
+                        <div class="technical-skills">
+                            <h1>Technical Skills</h1>
+                            <div class="skill six">
+                            <p>Web Development</p>
+                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/laptop-coding.png" alt="web-development"/>
+                            </div>                        
+                            <div class="skill seven">
+                                <p>AI Integration</p>
+                                <img width="48" height="48" src="https://img.icons8.com/?size=100&id=kLkU4c9YfQNM&format=png&color=000000" alt="ai"/>
+                            </div>
+                            <div class="skill eight">
+                                <p>Data Manipulation & Visualization</p>
+                                <img width="48" height="48" 
+                                src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Data-Visualization-smooth-conceptual-smashingstocks-flat-smashing-stocks.png"
+                                 alt="external-Data-Visualization-smooth-conceptual-smashingstocks-flat-smashing-stocks"/>
+                            </div>
+                            <div class="skill nine">
+                                <p>API Integration</p>
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/api-settings.png" alt="api-settings"/>
+                            </div>
+                            <div class="skill ten">
+                                <p>Responsive Design</p>
+                                <img width="48" height="48" src="https://img.icons8.com/fluency/48/media-queries.png" alt="media-queries"/>
+                            </div>
+                        </div>
+                        
+                        <div class="tools-Technologies">
+                            <h1>Tools & Technologies</h1>
+                            <div class="skill twelve">
+                                <p>GitHub</p>
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/github.png" alt="github"/>
+                            </div>
+                            <div class="skill thirteen">
+                                <p>VS Code</p>
+                                <img width="48" height="48" src="https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000" alt="vs-code"/>
+                            </div>
+                            
+                            <div class="skill fourteen">
+                                <p>REST APIs</p>
+                                <img width="48" height="48" src="https://img.icons8.com/parakeet/48/api-settings.png" alt="api-settings"/>
+                            </div>
+                            <div class="skill fiveteen">
+                                <p>Pycharm</p>
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/pycharm.png" alt="pycharm"/>
+                            </div>
+                            <div class="skill sixteen">
+                                <p>SSMS</p>
+                                <img width="48" height="48" src="https://img.icons8.com/?size=100&id=IWv649ue3CIf&format=png&color=000000" alt="sql-server-management-studio"/>
+                            </div>
+                        </div>
+                        <div class="f&l">
+                            <h1>Frameworks and Libraries</h1>
+                            <div class="skill eighteen">
+                                <p>React</p>
+                                <img width="48" height="48" src="https://img.icons8.com/?size=100&id=bzf0DqjXFHIW&format=png&color=000000" alt="react"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="certificates-section">
+                    <h1>Professional Certificates</h1>
+                    <div id="certificates">
+                        <div class="certificate-container">
+                            <img class="certificate-img" src="https://onedrive.live.com/?view=8&photosData=%2Fphoto%2FD4D9B5F23B52DFC0%21sb0ac5ecf8bbf4c719f371cec373fec39%3Fview%3Dall">
+                            <div><a class="view-certificate" href="https://www.shecodes.io/certificates/7929a0e0dcf3437f615457c0e7739b63" target="_blank">View certificate <i class='bxr  bx-arrow-in-up-right-stroke-square'  ></i> </a></div>
+                        </div>
+                        <div class="certificate-container">
+                            <img class="certificate-img" src="https://s3.amazonaws.com/shecodesio-production/students/certificates/000/214/248/original/214248.png?1743025316">
+                            <div><a class="view-certificate" href="https://www.shecodes.io/certificates/78910224d6baac96e9263c9769e91b41" target="_blank">View certificate <i class='bxr  bx-arrow-in-up-right-stroke-square'  ></i>  </a></div>
+                        </div>
+                        <div class="certificate-container">
+                            <img class="certificate-img" src="https://s3.amazonaws.com/shecodesio-production/students/certificates/000/217/551/original/217551.png?1743026250">
+                            <div><a class="view-certificate" href="https://www.shecodes.io/certificates/9431af731b5500a533c1284d9a3ca249" target="_blank">View certificate <i class='bxr  bx-arrow-in-up-right-stroke-square'></i> </a></div>
+                        </div>
+                        <div class="certificate-container">
+                            <img class="certificate-img" src="https://s3.amazonaws.com/shecodesio-production/students/certificates/000/233/020/original/233020.png?1752836066">
+                            <div><a class="view-certificate" href="https://www.shecodes.io/certificates/201d8473bb69f8a4ca3766382dd5728e" target="_blank">View certificate <i class='bxr  bx-arrow-in-up-right-stroke-square'  ></i> </a></div>
+                        </div>
+                        <div class="certificate-container">
+                            <img class="certificate-img" src="C:\Users\adlam\Downloads\My Projects\MyPortfolio\Screenshot 2025-07-18 180908.png">
+                            <div><a class="view-certificate" href="https://freecodecamp.org/certification/fccf2374bd1-da81-49d9-a47d-f02c87358f12/responsive-web-design" target="_blank">View certificate <i class='bxr  bx-arrow-in-up-right-stroke-square'  ></i> </a></div>
+                        </div>
+                        <div class="certificate-container">
+                            <img class="certificate-img" src="https://s3.amazonaws.com/shecodesio-production/students/certificates/000/243/937/original/243937.png?1761665896">
+                            <div><a class="view-certificate" href="https://www.shecodes.io/certificates/dc92c855f39b636b5a00df02bc01c2b6" target="_blank">View certificate <span class="material-symbols-rounded">
+enable
+</span> </a></div>
+                        </div>
+
+                    <!-- </div> -->
+                </section>
+                <section class="projects-section">
+                    <h1>Projects</h1>
+                    <div id="projects">
+                        <div class="project-container">
+                            <img class="project-img" src="https://onedrive.live.com/?view=8&photosData=%2Fphoto%2FD4D9B5F23B52DFC0%21sb0ac5ecf8bbf4c719f371cec373fec39%3Fview%3Dall">
+                            <div><a class="view-certificate" href="https://romannumeralcalculator.netlify.app/">View certificate</a></div>
+                        </div>
+                        <div class="project-container">
+                            <img class="project-img" src="https://onedrive.live.com/?view=8&photosData=%2Fphoto%2FD4D9B5F23B52DFC0%21s03a80224c6ef4e448bba7cd125e15936%3Fview%3Dall">
+                            <div><a class="view-certificate" href="https://wor1d-clock.netlify.app/">View certificate</a></div>
+                        </div>
+                        <div class="project-container">
+                            <img class="project-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfO6zGiarp1IAGPgOMDq-C0qpL6Ggodwoluw&s">
+                            <div><a class="view-certificate" href="https://tech-ai-poem-generator.netlify.app/">View certificate</a></div>
+                        </div>
+                        <div class="project-container">
+                            <img class="project-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfO6zGiarp1IAGPgOMDq-C0qpL6Ggodwoluw&s">
+                            <div><a class="view-certificate">View certificate</a></div>
+                        </div>
+                        <div class="project-container">
+                            <img class="project-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfO6zGiarp1IAGPgOMDq-C0qpL6Ggodwoluw&s">
+                            <div><a class="view-certificate" href="https://cozy-cucurucho-291033.netlify.app/">View certificate</a></div>
+                        </div>
+                        <div class="project-container">
+                            <img class="project-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfO6zGiarp1IAGPgOMDq-C0qpL6Ggodwoluw&s">
+                            <div><a class="view-certificate">View certificate<i class='bx  bx-arrow-up-right'  ></i> </a></div>
+                        </div>
+
+                    <!-- </div> -->
+                </section>
+            </main>
+            <section>
+                <div>
+                    <h1></h1>
+
+                </div>
+            </section>
+
+            <footer class="footer"> 
+                <div class="links">
+                    <h1>Links</h1><br>
+                    <button id="roadmap-link" class="roadmap-link" href="#">Roadmap</button>
+                    <div id="roadmap-section roadmap-section-enabled" class="roadmap-section-enabled"> <!--add proper names-->
+                        <div class="roadmap-section" class="">
+                            <h4>Completed</h4>
+                            <div class="roadmap-content">
+                                🌱 2024 — The Beginning of My Tech Journey
+
+🎓 Began my BSc in Information Technology at Richfield, diving into programming, cloud computing, and data concepts.
+
+💡 Developed an interest in AI and data science, learning Python and exploring how technology makes smarter decisions.
+
+💻 Completed SheCodes Basic Bootcamp, discovering the magic of HTML, CSS, and JavaScript — the foundation of everything I build today.
+
+🤖 Earned certifications in:
+
+Generative AI
+
+AI Matters
+
+Ethics of AI (University of Helsinki)
+These introduced me to the responsible and creative side of artificial intelligence.
+
+💻 2025 — Building, Breaking, and Creating
+
+🌤️ Completed SheCodes Plus, where I built a fully functional Weather App using APIs and JavaScript.
+
+🪄 Finished SheCodes AI, experimenting with AI-driven web features and smarter UI interactions.
+
+🌐 Earned the Responsive Web Design Certificate from freeCodeCamp, mastering layouts that adapt beautifully across all devices.
+
+💡 Started JavaScript Algorithms and Data Structures to strengthen my logic and technical problem-solving.
+
+🛍️ Joined a web development team working on an online shopping platform, focusing on frontend functionality and handling error management for online payments.
+
+🖥️ Built and published my first developer portfolio, bringing my projects and personality together in one space.
+
+🎯 Submitted my final SheCodes project today! — a proud milestone marking the completion of my full SheCodes learning journey.
+                            </div>
+                        </div>
+                        <div class="roadmap-section ">
+                            <h4>In-Progress</h4>
+                            <div class="roadmap-content">
+                                ksfdb
+                            </div>
+                        </div>
+                        <div class="roadmap-section ">
+                            <h4>Planned</h4>
+                            <div class="roadmap-content">
+                                🔜 Learning React.js to build modern, dynamic web applications.
+
+🔜 Exploring AI integration in web apps, bridging creativity with intelligent automation.
+
+🔜 Diving deeper into frontend development, UX, and accessibility.
+
+🔜 Contributing to open-source projects and collaborating with other developers.
+
+💭 Continuing to explore data visualization and AI model training — combining insight with design.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contactMe">
+                        <a class="contactMe-text" href="https://www.linkedin.com/in/andiswa-dlamini-36652a330/">Contact Me<i class='bx  bx-phone'  ></i> </a>
+                    </div>
+                    <div class="view-resume">
+                        <a class="view-resume-text" href="https://1drv.ms/w/c/d4d9b5f23b52dfc0/EdGwK06zkFxJpYOFVPfTDTUBEXVPNqw9KWj1WzPu7VdJPw?e=A3HlfQ">View Resume <i class='bx  bx-save'  ></i></a>
+                    </div>
+                    <div class="FAQ">
+                        <a class="FAQ-text" href="#">FAQ</a>
+                        <p class="hidden">You’ve reached the bottom of the page, no bugs found, so let’s deploy the interview.😌</p>
+                    </div>
+                </div>
+                <div class="footer-footer">
+                   <div class="socials">
+                        <ul>
+                            <a href="https://www.linkedin.com/in/andiswa-dlamini-36652a330/">
+                                <li class="linkedin">
+                                    <i class='bx bxl-linkedin'></i>
+                                </li>
+                            </a>
+
+                            <a href="#">
+                                <li class="tiktok">
+                                    <i class='bx bxl-tiktok'></i>
+                                </li>
+                            </a>
+
+                            <a href="#">
+                                <li class="Instagram">
+                                    <i class='bx bxl-instagram'></i>
+                                </li>
+                            </a>
+
+                            <a href="#">
+                                <li class="" >
+                                    <i class='bx bxl-facebook'></i>
+                                </li>
+                            </a>
+
+                        </ul>
+                        <br>
+                    </div>
+                    <div >&copy;2025 Andiswa Dlamini. All Right Reserved.</div>
+                </div>
+            </footer>
+
+
+            <!-- emoji picker   -->
+            <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+                   
+                
+            <!-- Scripts loaded with the defer attribute will load in the order they appear on the page -->
+            <script src="script.js" defer></script>
+            <!-- <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> -->
+
+        </body>
+</html>
+
+
+
