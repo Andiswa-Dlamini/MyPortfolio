@@ -31,13 +31,13 @@ a {
 
 body {
     color: #ededed;
-    background: rgb(37, 29, 69);  
+    background: rgb(37, 29, 69); 
+    
 }
 
 header {
   width: 100%;
   height: 50px;
-  /* background-color: #1b1b32; */
   position:fixed;
   display: flex;
   justify-content: space-between;
@@ -52,6 +52,7 @@ header {
 #navbar {
      width: 69%;
      height: 50px;
+
 }
 
 nav > ul {
@@ -97,6 +98,7 @@ nav > ul > li {
   border-radius: 50%;
   height: 12vw;
   width: 12vw; 
+  margin-top: -20px;
   margin-left: 400px;
   float:left;
   padding: 0.3rem;
@@ -109,6 +111,7 @@ nav > ul > li {
 #home-section {
   padding: 1rem;
   height: 100%;
+
 }
 .home-content {
   
@@ -121,6 +124,7 @@ nav > ul > li {
     flex-wrap: wrap;
     overflow: hidden;
     align-items: center;
+    margin-top: 40px;
     margin-bottom: 80px;
     margin-left: 15px;
     justify-content: space-evenly;
@@ -132,7 +136,8 @@ nav > ul > li {
   top: 52%;
   display: flex;
   max-width: 500px;
-  margin-left: 7%;
+  margin-right: 30%;
+  margin-top: 40px;
   padding-bottom: 1.3rem;
   border-bottom: 1px solid #0ef;
 }
@@ -261,7 +266,7 @@ nav > ul > li {
 }
 
 .technical-skills {
-  margin-top: 25px;
+  /* margin-top: 4px; */
 }
 
 .certificates-section {
@@ -297,11 +302,15 @@ nav > ul > li {
 }
 
 /* bottom left text */
-.view-certificate {
+.view-certificate, .view-project{
   position: absolute;
   bottom: 8px;
   left: 16px;
-  background-color: #0ef;
+  font-size: 10px;
+  padding: 3px;
+  background: linear-gradient(to right, rgb(244, 93, 118) 0%, rgb(255, 192, 203));
+  border: 1px solid pink;
+  border-radius: 2px;
 }
 
 
@@ -427,7 +436,7 @@ nav > ul > li {
   height: 50vh;
   border-radius: 15px;
   box-sizing: border-box;
-  background-color: grey;
+  background-color: rgb(30, 35, 51);
 }
 
 .chat-header {
@@ -516,11 +525,13 @@ nav > ul > li {
 
 .chat-body .bot-message .message-text{
   background: #dfdfe2;
+  color: black;
   border-radius: 13px 13px 13px 3px;
 }
 
 .chat-body .user-message .message-text{
   background:pink ;
+  color: black;
   border-radius: 13px 13px 3px 13px;
   
 }
@@ -608,7 +619,7 @@ nav > ul > li {
   border: none;
   gap: 5px;
   margin-top: -20px;
-  margin-left: 200px;
+  margin-left: 230px;
   align-self: flex-end;
   
 }
