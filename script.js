@@ -65,6 +65,22 @@ const readMore = (event) => {
       headers: {
         "Content-Type": "application/json" },
       body: JSON.stringify({
+        system_instruction: {
+          parts: [
+            {
+              text: `Your name is Neko. You are Andiswas AI assistant.
+                   Your job is to answer questions about skills, experience, and projects.Information about Thando:
+                  - IT student at Richfield
+                  - Skilled in JavaScript, Python, HTML, CSS
+                  - Built AI chatbot interfaces and web applications
+                  - Experienced in AI data training and linguistic QA
+                  - Speaks English, Zulu, Xhosa, and Sotho
+
+                  Always answer professionally and clearly.
+                  If you do not know the answer, say you do not have that information.`
+            }
+          ]
+        },
         contents: [{
           parts: 
           [{
