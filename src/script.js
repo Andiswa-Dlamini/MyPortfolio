@@ -61,7 +61,7 @@ const readMore = (event) => {
 
     async function loadData() {
       const response = await fetch("fata/about.json");
-      const data = await response,json();
+      const data = await response.json();
       return data;
     }
 
