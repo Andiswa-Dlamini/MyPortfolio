@@ -419,9 +419,6 @@ nav > ul > li {
 }
 
 
-/* .angazi {
-  /* display: flex; 
-} */
 
 
 .chatbot-popup {
@@ -442,7 +439,7 @@ nav > ul > li {
 .chat-header {
   display: flex;
   width: 100%;
-  background: pink;
+  background: #e73d3d;
   padding: 15px 22px;
   border-radius: 7px;
   justify-content: space-between;
@@ -458,7 +455,7 @@ nav > ul > li {
   height: 35px;
   width:55px;
   flex-shrink: 0;
-  background: #fff;
+  background: #ffffff;
   border-radius: 50%;
 }
 

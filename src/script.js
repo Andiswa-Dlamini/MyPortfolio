@@ -1,7 +1,7 @@
 // Typewriter Js Plugin for my name
 let intro = document.getElementById("name");
 let typewriter = new Typewriter(intro, {
-  strings: "Andiswa Dlamini",
+  strings: "to Andiswa Dlamini's",
   autoStart: true,
   cursor: "",
   
@@ -10,7 +10,7 @@ let typewriter = new Typewriter(intro, {
 
 let job = document.getElementById("job");
 let title = new Typewriter(job, {
-  strings: "Front-end Dev",
+  strings: "Portfolio",
   delay: 500,
   autoStart: true,
   cursor: "",
@@ -59,6 +59,11 @@ const readMore = (event) => {
 
     const msgBotElement = incomingMsgDiv.querySelector(".message-text");
 
+    async function loadData() {
+      const response = await fetch("fata/about.json");
+      const data = await response,json();
+      return data;
+    }
 
     const requestOptions = {
       method: "POST",
@@ -69,15 +74,20 @@ const readMore = (event) => {
           parts: [
             {
               text: `Your name is Neko. You are Andiswas AI assistant.
-                   Your job is to answer questions about skills, experience, and projects.Information about Thando:
-                  - IT student at Richfield
-                  - Skilled in JavaScript, Python, HTML, CSS
-                  - Built AI chatbot interfaces and web applications
-                  - Experienced in AI data training and linguistic QA
-                  - Speaks English, Zulu, Xhosa, and Sotho
+                   Your job is to answer questions about skills, experience, and projects.Information about Andiswa:
+
+                   Use the information below to answer questions:
+
+                  ${JSON.stringify(data, null, 2)}
+
+                  // - IT student at Richfield
+                  // - Skilled in JavaScript, Python, HTML, CSS
+                  // - Built AI chatbot interfaces and web applications
+                  // - Experienced in AI data training and linguistic QA
+                  // - Speaks English, Zulu, Xhosa, and Sotho
 
                   Always answer professionally and clearly.
-                  If you do not know the answer, say you do not have that information.`
+                  If you do not know the answer, say "I don’t have that information yet. You can learn more by contacting Andiswa.".`
             }
           ]
         },
