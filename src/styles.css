@@ -453,8 +453,9 @@ nav > ul > li {
 .header-info .chatbot-logo {
   fill: pink ;
   height: 35px;
-  width:55px;
+  width:50px;
   flex-shrink: 0;
+  margin-right: 5px;
   background: #ffffff;
   border-radius: 50%;
 }
@@ -492,6 +493,7 @@ nav > ul > li {
    scrollbar-color: black;
   }
 
+
 .chat-body .message {
   display: flex;
   gap: 11px;
@@ -500,7 +502,7 @@ nav > ul > li {
 .chat-body .bot-message .bot-avatar {
   fill: pink ;
   height: 35px;
-  width:55px;
+  width:50px;
   flex-shrink: 0;
   margin-bottom: 2px;
   align-self: flex-end;
