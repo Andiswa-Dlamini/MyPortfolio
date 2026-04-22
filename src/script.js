@@ -194,7 +194,11 @@ sendbtn.addEventListener("click", (e) => {
   const roadmaplinkElement = document.getElementById("roadmap-link");
   const roadmapSectionElement = document.getElementById("roadmap-section");
   roadmaplinkElement.addEventListener('click', event => {
-  roadmapSectionElement.classList.toggle("roadmap-section-enabled");
+    const roadmapPrompt = " ";
+    roadmapSectionElement.classList.toggle("roadmap-section-enabled");
+
+    sendMsg(roadmapPrompt);
+    // msgInput.value = roadmapPrompt;
 
   });
 
