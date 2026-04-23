@@ -18,11 +18,11 @@ let title = new Typewriter(job, {
 });
 
 
-const readMore = (event) => {
-    event.preventDefault();
-    let hiddenElement = document.querySelector('.hidden');
-    hiddenElement.classList.toggle('.hidden');
-}   
+// const readMore = (event) => {
+//     event.preventDefault();
+//     let hiddenElement = document.querySelector('.hidden');
+//     hiddenElement.classList.toggle('.hidden');
+// }   
 
  
    const chatBubbleElement = document.getElementById("chat-bubble-icon");
@@ -57,22 +57,12 @@ const readMore = (event) => {
 
   const botResponse = async (incomingMsgDiv) => {
 
+    let myData = "about.json";
+    let aboutMe = JSON.stringify(myData);
+
     const msgBotElement = incomingMsgDiv.querySelector(".message-text");
 
-    // async function loadData() {
-    //   const response = await fetch("apiUrl, requestOptions");
-    //   const loaddata = await response.json();
-    //   return loaddata;
-    // }
-    // const file = require('about.json');
-    // file.readFi;e('data.json', 'utf8', (err, data) => {
-    //   if (err) {
-    //     console.error('Error reading file', err);
-    //     return;
-    //   }
-    // })
-
-    const requestOptions = {
+      const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json" },
@@ -85,13 +75,13 @@ const readMore = (event) => {
                    Your job is to answer questions about skills, experience, and projects.Information about Andiswa:
 
                    Use the information below to answer questions:
+                   ${aboutMe}
 
-
-                  - IT student at Richfield
-                  - Skilled in JavaScript, Python, HTML, CSS
-                  - Built AI chatbot interfaces and web applications
-                  - Experienced in AI data training and linguistic QA
-                  - Speaks English, Zulu, Xhosa, and Sotho
+                  // - IT student at Richfield
+                  // - Skilled in JavaScript, Python, HTML, CSS
+                  // - Built AI chatbot interfaces and web applications
+                  // - Experienced in AI data training and linguistic QA
+                  // - Speaks English, Zulu, Xhosa, and Sotho
 
                   Always answer professionally and clearly.
                   If you do not know the answer, say "I don’t have that information yet. You can learn more by contacting Andiswa.".`
@@ -201,7 +191,7 @@ sendbtn.addEventListener("click", (e) => {
 
   const roadmaplinkElement = document.getElementById("roadmap-link");
   roadmaplinkElement.addEventListener('click', event => {
-    const roadmapPrompt = "What is Andiswa's roadmap from 2024 - 2026?";
+    const roadmapPrompt = "How does Andiswa's roadmap look from 2024 - 2026?";
 
     chatBotElement.classList.remove("hide-popup");
     msgInput.value = roadmapPrompt;
@@ -212,12 +202,15 @@ sendbtn.addEventListener("click", (e) => {
 
   });
 
+    const faqLink = document.getElementById("faqLink");
+    faqLink.addEventListener('click', event => {
+      document.getElementById("faq-text").classList.toggle("hidden");
+
+  });
+
   const closeChatBtn = document.getElementById("close-chatbot");
   closeChatBtn.addEventListener('click', event => {
     chatBotElement.classList.add("hide-popup");
 
   });
 
-
-
-// readMore();
