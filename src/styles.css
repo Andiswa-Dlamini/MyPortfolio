@@ -54,6 +54,7 @@ nav ul {
 
 nav ul li {
   margin: 0;
+  text-decoration: none;
 }
 
 #navbar a:hover {
@@ -104,6 +105,7 @@ nav ul li {
     width: 180px;
     height: 180px;
     transform: none;
+    justify-self: center;
   }
 
   .home-content {
@@ -132,10 +134,14 @@ nav ul li {
     flex-direction: column;
     text-align: center;
     gap: 30px;
+    /* border: 3px solid black;
+    /* justify-content: space-between; */
+    align-items: center; */
   }
 
   .about-section {
     margin: 20px;
+    /* align-items: center; */
   }
   .about-paragraph-text-container {
     margin-left: 0;
@@ -159,6 +165,18 @@ nav ul li {
     width: 100%;
     max-width: 250px;
   }
+
+  .chatbot-popup {
+  position: fixed;
+  right: 0;
+  margin-top: -60%;
+  width: 50%;
+  height: 50vh;
+  
+  }
+  .footer{
+    max-width: 100%;
+  }
 }
 
 .my-picture-div {
@@ -166,7 +184,7 @@ nav ul li {
 }
 
 .my-picture {
-  /* display: block; */
+  display: block;
   position: absolute;
   justify-content: space-between;
   border-radius: 50%;
@@ -181,6 +199,12 @@ nav ul li {
   transition: all in 10ms ease-in-out;
 
 }
+.my--second-picture{
+  height: 12vw;
+  width: 12vw;
+}
+
+
 
 #home-section {
   padding: 1rem;
@@ -190,9 +214,9 @@ nav ul li {
 .home-content {
   
     width: 100%;
-    /* display: block; */
+    display: block;
     min-height: 70vh;
-    /* padding-right: 40%; */
+    padding-right: 40%;
     font-size: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -206,8 +230,8 @@ nav ul li {
 }
 
 .home-buttons {
-  /* position: absolute; */
-  /* top: 52%; */
+  position: absolute;
+  top: 52%;
   display: flex;
   max-width: 500px;
   margin-right: 30%;
@@ -216,11 +240,11 @@ nav ul li {
   border-bottom: 1px solid #0ef;
 }
 
-/* #introduction {
+#introduction {
   position: absolute;
   left: 120px; /* Positions the div 20px from the left edge of its parent */
 
-} */
+}
 /* .my-picture {
   transform-origin: left;
   transform: rotate(130deg) scaleX(-1);
@@ -483,12 +507,18 @@ nav ul li {
 
 .footer-footer {
   /* width: 50%; */
-  font-size: small;
+  /* font-size: small; */
+  /* text-align: center; */
+  /*  */
 }
-.socials {
+.socials ul{
+  display: flex; 
+  gap: 90px;
+  list-style: none;
+  flex-wrap: wrap;
   padding-top: 20px;
   padding-bottom: 10px;
-  justify-items: left;
+  /* justify-items: center; */
   border-top: 1px solid rgb(63, 62, 62);
   /* border-bottom: 1px solid rgb(63, 62, 62); */
 }
