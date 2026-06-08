@@ -101,12 +101,18 @@ nav ul li {
   }
   .my-picture {
     position: static;
-    margin: 20px auto;
+    margin-left: 0;
     width: 180px;
     height: 180px;
     transform: none;
     justify-self: center;
   }
+
+  .my--second-picture{
+  height: 12vw;
+  width: 12vw;
+  margin-left: 50px;
+}
 
   .home-content {
     flex-direction: column;
@@ -136,7 +142,7 @@ nav ul li {
     gap: 30px;
     /* border: 3px solid black;
     /* justify-content: space-between; */
-    align-items: center; */
+    margin-right: 70px; 
   }
 
   .about-section {
@@ -166,6 +172,19 @@ nav ul li {
     max-width: 250px;
   }
 
+  .certificate-section > h1 {
+    margin-left: 10px;
+  }
+  .certificates{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-left: 60px;
+  }
+
+  
+
   .chatbot-popup {
   position: fixed;
   right: 0;
@@ -181,6 +200,7 @@ nav ul li {
 
 .my-picture-div {
   margin-left: 10px;
+  
 }
 
 .my-picture {
@@ -199,10 +219,7 @@ nav ul li {
   transition: all in 10ms ease-in-out;
 
 }
-.my--second-picture{
-  height: 12vw;
-  width: 12vw;
-}
+
 
 
 
@@ -415,7 +432,6 @@ nav ul li {
 
 .projects-section {
   border: 1px solid rgb(63, 62, 62);
-    /* justify-content: center; */
     margin: 150px;
     padding: 140px;
     width: 80%;
