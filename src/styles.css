@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  outline: 1px solid red;
+  max-width: 100%;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -68,6 +70,8 @@ nav ul li {
   header {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    overflow: hidden;
     gap: 10px;
     height: auto;
   }
@@ -76,10 +80,12 @@ nav ul li {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   .logo {
+    text-align: center;
+    width: 100%;
     font-size: 1.3rem;
   }
 
@@ -105,7 +111,8 @@ nav ul li {
     width: 180px;
     height: 180px;
     transform: none;
-    justify-self: center;
+    display: none;
+    /* justify-self: center; */
   }
 
   .my--second-picture{
@@ -131,10 +138,10 @@ nav ul li {
 
   .home-buttons {
     position: static;
-    margin: 20px 0;
+    /* margin: 20px 0;
     border-bottom: none;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
   }
    .about-content {
     flex-direction: column;
@@ -145,7 +152,8 @@ nav ul li {
     margin-right: 70px; 
   }
 
-  .about-section {
+  .about-section, .skills-section, .projects-section,
+  .certificates-section {
     margin: 20px;
     /* align-items: center; */
   }
@@ -166,21 +174,20 @@ nav ul li {
     max-width: 250px;
   }
 
-  .skill {
-    padding: 10px;
+  .certificates-section, .projects-section {
     width: 100%;
-    max-width: 250px;
+    margin: 20px;
+    padding: 20px;
   }
 
-  .certificate-section > h1 {
-    margin-left: 10px;
+  .certificate-section, .projects-section > h1 {
+    margin-left: 100px;
   }
-  .certificates{
-    display: flex;
-    flex-direction: column;
+  .certificates, .projects{
+    width: 100%;
+    max-width: 100%;
     align-items: center;
-    gap: 10px;
-    margin-left: 60px;
+    /* margin: 20px; */
   }
 
   
@@ -195,6 +202,7 @@ nav ul li {
   }
   .footer{
     max-width: 100%;
+    /* width: 100%; */
   }
 }
 
@@ -214,9 +222,9 @@ nav ul li {
   margin-left: 400px;
   float:left;
   padding: 0.3rem;
-  transform: rotate(360deg) scale(1.5);
+  /* transform: rotate(360deg) scale(1.5);
   transform-origin: top-left;
-  transition: all in 10ms ease-in-out;
+  transition: all in 10ms ease-in-out; */
 
 }
 
@@ -479,6 +487,7 @@ nav ul li {
 
 .footer {
   height: 100%;
+  width: 100%;
   padding: 2.5rem;
   background: rgb(171, 170, 170);
 
