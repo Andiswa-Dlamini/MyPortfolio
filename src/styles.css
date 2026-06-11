@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   max-width: 100%;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -107,12 +107,13 @@ nav ul li {
   }
   .my-picture {
     position: static;
-    margin-left: 0;
+    /* margin-top: 100px; */
     width: 180px;
     height: 180px;
     transform: none;
-    display: none;
-    /* justify-self: center; */
+    /* margin-top: -20px; */
+    /* margin-right: 190px;   */
+    justify-self: center;
   }
 
   .my--second-picture{
@@ -134,14 +135,15 @@ nav ul li {
   #introduction {
     position: static;
     left: auto;
+    margin-right: 170px;
   }
 
   .home-buttons {
     position: static;
-    /* margin: 20px 0;
-    border-bottom: none;
-    justify-content: center;
-    flex-wrap: wrap; */
+    margin-left: 250px ;
+    /* border-bottom: none; */
+    
+    /* flex-wrap: wrap;  */
   }
    .about-content {
     flex-direction: column;
@@ -176,7 +178,7 @@ nav ul li {
 
   .certificates-section, .projects-section {
     width: 100%;
-    margin: 20px;
+    margin-right: 200px;
     padding: 20px;
   }
 
@@ -187,7 +189,7 @@ nav ul li {
     width: 100%;
     max-width: 100%;
     align-items: center;
-    /* margin: 20px; */
+    margin-right: 200px;
   }
 
   
@@ -196,6 +198,7 @@ nav ul li {
   position: fixed;
   right: 0;
   margin-top: -60%;
+  margin-left: 200px;
   width: 50%;
   height: 50vh;
   
