@@ -1,17 +1,9 @@
 {
-  "about me": "Final-year BSc Information Technology student with hands-on 
-              experience in software development, data analysis and AI-assisted systems. 
-              Demonstrates strong ability to analyze, debug and evaluate code, with practical
-              exposure to machine learning tools, data processing and API-driven applications.
-              Experience includes freelance work assessing AI-generated code for correctness, 
-              logic and performance, alongside building real-world projects using Python and JavaScript.",
-
+  "about me": "Final-year BSc Information Technology student with hands-on \n              experience in software development, data analysis and AI-assisted systems. \n              Demonstrates strong ability to analyze, debug and evaluate code, with practical\n              exposure to machine learning tools, data processing and API-driven applications.\n              Experience includes freelance work assessing AI-generated code for correctness, \n              logic and performance, alongside building real-world projects using Python and JavaScript.",
   "projects": [
-    ["Netflix Data Analysis": "Netflix Data Analysis Project
-                              Cleaned and processed real-world dataset using pandas and NumPy
-                              Performed exploratory data analysis to identify trends and patterns
-                              Created visualizations using matplotlib, seaborn, and plotly
-                              Generated insights from data to support decision-making"],
+    {
+      "Netflix Data Analysis": "Netflix Data Analysis Project\nCleaned and processed real-world dataset using pandas and NumPy\nPerformed exploratory data analysis to identify trends and patterns\nCreated visualizations using matplotlib, seaborn, and plotly\nGenerated insights from data to support decision-making"
+    },
     "Personal Portfolio with AI Chatbot Assistant",
     "World Clock App",
     "Tech Joke Generator",
@@ -19,26 +11,8 @@
     "Roman Numeral Calculator"
   ],
   "roadmap": [
-    " 2024 — The Beginning of My Tech Journey
-    - Began my BSc in Information Technology at Richfield, diving into programming, cloud computing, and data concepts.
-    - Developed an interest in AI and data science, learning Python and exploring how technology makes smarter decisions.
-    - Completed SheCodes Basic Bootcamp, discovering the magic of HTML, CSS, and JavaScript — the foundation of everything I build today.
-    - Earned certifications in:",
-
-   " 2025 — Building, Breaking and Creating
-    -Completed SheCodes Plus, where I built a fully functional Weather App using APIs and JavaScript.
-    -Finished SheCodes AI, experimenting with AI-driven web features and smarter UI interactions.
-    -Earned the Responsive Web Design Certificate from freeCodeCamp, mastering layouts that adapt beautifully across all devices.
-    -Started JavaScript Algorithms and Data Structures certificate from freeCodeCamp to strengthen my logic and technical problem-solving.
-    -Built and published my first developer portfolio, bringing my projects and personality together in one space.",
-
-   "2026 — Scaling, Specializing and Shipping Real-World Solutions
-   - Deepening my focus on AI-powered applications, building systems that integrate intelligent features into real-world user experiences.
-   - Strengthening my problem-solving and technical foundation through continued work in software development.
-   - Expanding my work in AI integration, developing smarter applications that solve practical problems.
-   - Advancing my data analysis skills by working with real datasets, uncovering insights and building interactive visualizations.
-   - Growing my professional experience through freelance and collaborative projects, applying my skills in real-world environments.
-   - Continuously improving my portfolio by building, refining and deploying projects that reflect both technical ability and creativity."
-
+    " 2024 — The Beginning of My Tech Journey\n    - Began my BSc in Information Technology at Richfield, diving into programming, cloud computing, and data concepts.\n    - Developed an interest in AI and data science, learning Python and exploring how technology makes smarter decisions.\n    - Completed SheCodes Basic Bootcamp, discovering the magic of HTML, CSS, and JavaScript — the foundation of everything I build today.\n    - Earned certifications in:",
+    " 2025 — Building, Breaking and Creating\n    -Completed SheCodes Plus, where I built a fully functional Weather App using APIs and JavaScript.\n    -Finished SheCodes AI, experimenting with AI-driven web features and smarter UI interactions.\n    -Earned the Responsive Web Design Certificate from freeCodeCamp, mastering layouts that adapt beautifully across all devices.\n    -Started JavaScript Algorithms and Data Structures certificate from freeCodeCamp to strengthen my logic and technical problem-solving.\n    -Built and published my first developer portfolio, bringing my projects and personality together in one space.",
+    "2026 — Scaling, Specializing and Shipping Real-World Solutions\n   - Deepening my focus on AI-powered applications, building systems that integrate intelligent features into real-world user experiences.\n   - Strengthening my problem-solving and technical foundation through continued work in software development.\n   - Expanding my work in AI integration, developing smarter applications that solve practical problems.\n   - Advancing my data analysis skills by working with real datasets, uncovering insights and building interactive visualizations.\n   - Growing my professional experience through freelance and collaborative projects, applying my skills in real-world environments.\n   - Continuously improving my portfolio by building, refining and deploying projects that reflect both technical ability and creativity."
   ]
 }

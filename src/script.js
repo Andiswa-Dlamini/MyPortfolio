@@ -38,9 +38,31 @@ let title = new Typewriter(job, {
     const sendbtn = document.querySelector(".send-btn");
 
 
-   // API setup
-    const apiKEY = "AIzaSyAzY7b0rok5rGVp-CemBfZnEk9G5hjhIxA";
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKEY}`;
+   const chatbotFallback = "I don't have that information yet. You can learn more by contacting Andiswa on LinkedIn.";
+
+   async function loadAboutMe() {
+     const res = await fetch("./about.json");
+     if (!res.ok) throw new Error("Could not load about.json");
+     return res.json();
+   }
+
+   function buildSystemPrompt(aboutMe) {
+     return `You are Neko, the AI assistant on Andiswa Dlamini's portfolio website.
+Your job is to answer visitors' questions about Andiswa's skills, experience, education, certifications, and projects.
+Rules:
+1. For questions about Andiswa, answer only from the JSON below. Do not invent or assume facts about her.
+2. Respond naturally and briefly to greetings and social pleasantries; do not use the fallback for them.
+3. If asked for information specifically about Andiswa that is not in the JSON, reply exactly: "I don't have that information yet. You can learn more by contacting Andiswa on LinkedIn."
+4. Politely decline unrelated substantive questions and redirect visitors to questions about Andiswa's work; do not use the missing-information fallback for them.
+5. Lead with the answer. Keep sentences short, professional, and clear; use one or two sentences for simple questions.
+6. Write short paragraphs for explanations, separating paragraphs with a blank line.
+7. For answers with two or more distinct sections, use concise Markdown headings (## Heading) on their own lines. Do not add headings to greetings or simple answers.
+8. Use a short Markdown bullet list (- item) only when several distinct items are easier to scan as a list. Add a brief lead-in and put each item on its own line. Do not turn greetings or simple answers into lists.
+9. Avoid long blocks, repeated information, and unfinished trailing phrases. Finish with a complete sentence.
+10. Do not share any contact details beyond what is in the JSON.
+ANDISWA'S INFORMATION (JSON):
+${JSON.stringify(aboutMe, null, 2)}`;
+   }
 
     const userData = {
       message:null
@@ -55,36 +77,80 @@ let title = new Typewriter(job, {
     return msgDiv;
   }
 
+  const renderBotResponse = (messageElement, response) => {
+    const fragment = document.createDocumentFragment();
+    const lines = response.trim().split(/\r?\n/);
+    let paragraphLines = [];
+    let currentList = null;
+
+    const flushParagraph = () => {
+      if (!paragraphLines.length) return;
+      const paragraph = document.createElement("p");
+      paragraph.className = "response-paragraph";
+      paragraph.textContent = paragraphLines.join(" ");
+      fragment.appendChild(paragraph);
+      paragraphLines = [];
+    };
+
+    for (const line of lines) {
+      const trimmedLine = line.trim();
+      const headingMatch = trimmedLine.match(/^#{1,3}\s+(.+)$/);
+      const listMatch = trimmedLine.match(/^[-*]\s+(.+)$/);
+
+      if (!trimmedLine) {
+        flushParagraph();
+        currentList = null;
+      } else if (headingMatch) {
+        flushParagraph();
+        currentList = null;
+        const heading = document.createElement("h3");
+        heading.className = "response-heading";
+        heading.textContent = headingMatch[1];
+        fragment.appendChild(heading);
+      } else if (listMatch) {
+        flushParagraph();
+        if (!currentList) {
+          currentList = document.createElement("ul");
+          currentList.className = "response-list";
+          fragment.appendChild(currentList);
+        }
+        const item = document.createElement("li");
+        item.textContent = listMatch[1];
+        currentList.appendChild(item);
+      } else {
+        currentList = null;
+        paragraphLines.push(trimmedLine);
+      }
+    }
+
+    flushParagraph();
+    messageElement.replaceChildren(fragment);
+  }
+
   const botResponse = async (incomingMsgDiv) => {
-
-    let myData = "about.json";
-    let aboutMe = JSON.stringify(myData);
-
     const msgBotElement = incomingMsgDiv.querySelector(".message-text");
+    let aboutMe;
 
-      const requestOptions = {
+    try {
+      aboutMe = await loadAboutMe();
+    } catch (error) {
+      console.error(error);
+      msgBotElement.textContent = chatbotFallback;
+      incomingMsgDiv.classList.remove("thinking");
+      chatBody.scrollTo({top: chatBody.scrollHeight, behavior: "smooth"});
+      return;
+    }
+
+    const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json" },
       body: JSON.stringify({
-        system_instruction: {
+        systemInstruction: {
           parts: [
         
             {
-              text: `Your name is Neko. You are Andiswas AI assistant.
-                   Your job is to answer questions about skills, experience, and projects.Information about Andiswa:
-
-                   Use the information below to answer questions:
-                   ${aboutMe}
-
-                  // - IT student at Richfield
-                  // - Skilled in JavaScript, Python, HTML, CSS
-                  // - Built AI chatbot interfaces and web applications
-                  // - Experienced in AI data training and linguistic QA
-                  // - Speaks English, Zulu, Xhosa, and Sotho
-
-                  Always answer professionally and clearly.
-                  If you do not know the answer, say "I don’t have that information yet. You can learn more by contacting Andiswa.".`
+                  text: buildSystemPrompt(aboutMe)
             }
           ]
         },
@@ -101,17 +167,21 @@ let title = new Typewriter(job, {
 
     try {
       // send request to Gemini API
-      const response = await fetch(apiUrl, requestOptions);
+      const response = await fetch("/.netlify/functions/chat", requestOptions);
       const data = await response.json();
       // console.log("API response:", data);
       // check for errors in response
       if(!response.ok) throw new Error(data.error.message);
 
       // extract bot response from API data
-      const apiResponse = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
-      msgBotElement.textContent = apiResponse;
+      const apiResponse = data.candidates[0].content.parts[0].text
+        .replace(/\*\*(.*?)\*\*/g, "$1")
+        .replace(/^[ \t]*\*[ \t]+/gm, "- ")
+        .trim();
+      renderBotResponse(msgBotElement, apiResponse);
     } catch (error) {
-    console.log(error);
+    console.error(error);
+    msgBotElement.textContent = chatbotFallback;
   } finally {
     incomingMsgDiv.classList.remove("thinking")
     chatBody.scrollTo({top: chatBody.scrollHeight, behavior: "smooth"});
@@ -191,7 +261,7 @@ sendbtn.addEventListener("click", (e) => {
 
   const roadmaplinkElement = document.getElementById("roadmap-link");
   roadmaplinkElement.addEventListener('click', event => {
-    const roadmapPrompt = "How does Andiswa's roadmap look from 2024 - 2026?";
+    const roadmapPrompt = "Andiswa's roadmap";
 
     chatBotElement.classList.remove("hide-popup");
     msgInput.value = roadmapPrompt;
