@@ -223,6 +223,7 @@ nav ul li {
   position: absolute;
   justify-content: space-between;
   border-radius: 50%;
+  animation: my-picture-spin 18s linear infinite;
   height: 12vw;
   width: 12vw; 
   margin-top: -20px;
@@ -233,6 +234,21 @@ nav ul li {
   transform-origin: top-left;
   transition: all in 10ms ease-in-out; */
 
+}
+
+@keyframes my-picture-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .my-picture {
+    animation: none;
+  }
 }
 
 

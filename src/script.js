@@ -243,6 +243,13 @@ ${JSON.stringify(aboutMe, null, 2)}`;
     theme: "light",
     skinTonePosition: "none",
     previewPosition: "none",
+    onEmojiSelect: (emoji) => {
+      const start = msgInput.selectionStart ?? msgInput.value.length;
+      const end = msgInput.selectionEnd ?? start;
+      msgInput.setRangeText(emoji.native, start, end, "end");
+      msgInput.focus();
+      document.body.classList.remove("show-emoji-picker");
+    },
     onClickOutside: (e) => {
       if (e.target.id === "emoji-btn"){
         document.body.classList.toggle("show-emoji-picker");
