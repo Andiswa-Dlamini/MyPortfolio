@@ -596,6 +596,7 @@ nav ul li {
 
 .chatbot-popup {
   position: fixed;
+  z-index: 2000;
   right: 16px;
   bottom: 16px;
   width: min(420px, calc(100vw - 32px));
@@ -862,6 +863,7 @@ nav ul li {
 
 #chat-bubble-icon {
   position: fixed;
+  z-index: 2100;
   right: 0;
   cursor: pointer;
   margin: 20px;
@@ -877,7 +879,7 @@ em-emoji-picker {
   max-height: 220px;
   visibility: hidden;
   transform: none;
-  z-index: 1000;
+  z-index: 2200;
 }
 
 .show-emoji-picker em-emoji-picker{
