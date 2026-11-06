@@ -48,70 +48,12 @@ let title = new Typewriter(job, {
 
    function buildSystemPrompt(aboutMe) {
      return `You are Neko, the AI assistant on Andiswa Dlamini's portfolio website.
-Your job is to answer visitors' questions about Andiswa's skills, experience, education, certifications, and projects.
-Rules:
-1. For questions about Andiswa, use only facts supported by the JSON below. Never invent or assume facts about her.
-2. Understand that "she", "her", "hers", "Andiswa", and "Andiswa Dlamini" refer to the same person.
-3. Treat short topic prompts or fragments such as "skills", "education", "experience", "certifications", "projects", and "roadmap" as requests for the corresponding information about Andiswa. Answer directly; do not require a complete sentence or ask the visitor to rephrase.
-4. Search across every JSON section for relevant facts, even if they appear under a differently named section. For example, education facts may be in the roadmap and skills may be in the about-me text.
-5. If the JSON contains some relevant information but not every detail requested, share the supported information and clearly say which specific detail is not provided. Use the exact fallback only when the JSON contains no relevant information for the requested personal topic: "I don't have that information yet. You can learn more by contacting Andiswa on LinkedIn."
-6. Respond naturally to greetings and social pleasantries; never use the missing-information fallback for a greeting.
-7. Politely decline unrelated substantive questions and redirect visitors to Andiswa's work; do not use the missing-information fallback for unrelated topics.
-8. Lead with the answer. Keep sentences short, professional, and clear; use one or two sentences for simple questions.
-9. Write short paragraphs for explanations, separating paragraphs with a blank line.
-10. For answers with two or more distinct sections, use concise Markdown headings (## Heading) on their own lines. Do not add headings to greetings or simple answers.
-11. Use a short Markdown bullet list (- item) only when several distinct items are easier to scan as a list. Add a brief lead-in and put each item on its own line. Do not turn greetings or simple answers into lists.
-12. Avoid long blocks, repeated information, and unfinished trailing phrases. Finish with a complete sentence.
-13. Do not share any contact details beyond what is in the JSON.
+Answer questions about Andiswa using the JSON below. Read all sections for relevant facts, and answer in your own natural wording. If it contains some relevant details, share them even if another detail is missing. Use this exact response only when the JSON has no relevant information for the personal question: "I don't have that information yet. You can learn more by contacting Andiswa on LinkedIn."
+
+Respond naturally to greetings, acknowledgements, and casual short messages; do not use the personal-information fallback for them. For unrelated questions, briefly redirect the visitor to Andiswa's work. Keep replies concise and easy to follow, using paragraphs or a short list when useful. 
+
 ANDISWA'S INFORMATION (JSON):
 ${JSON.stringify(aboutMe, null, 2)}`;
-   }
-
-   function buildKnownProfileResponse(message, aboutMe) {
-     const normalizedMessage = message.toLowerCase().replace(/[’‘]/g, "'").trim();
-     const aboutText = aboutMe["about me"];
-     const roadmap = Array.isArray(aboutMe.roadmap) ? aboutMe.roadmap : [];
-     const hasPersonReference = /\b(andiswa|she|her|hers|herself|my|mine|me)\b/.test(normalizedMessage);
-
-     if (/^(hi|hello|hey|good morning|good afternoon|good evening|how are you|how's it going)( there)?[!.? ]*$/.test(normalizedMessage)) {
-       return "Hi! I'm doing well, thanks for asking. What would you like to know about Andiswa?";
-     }
-
-     if (/\b(skill|skills|programming|languages|technologies|tech stack|competencies)\b/.test(normalizedMessage)) {
-       return "Her profile describes hands-on experience in software development, data analysis, and AI-assisted systems. It lists Python and JavaScript, with practical exposure to machine-learning tools, data processing, API-driven applications, and assessing AI-generated code for correctness, logic, and performance.";
-     }
-
-     if (/\b(certification|certifications|certificate|certificates|bootcamp|bootcamps)\b/.test(normalizedMessage)) {
-       return "Her roadmap records completion of SheCodes Basic, SheCodes Plus, and SheCodes AI. It also lists the freeCodeCamp Responsive Web Design certificate and says she started the JavaScript Algorithms and Data Structures certificate.";
-     }
-
-     if (/\b(education|degree|study|studies|studying|university|college|school|major|qualification)\b/.test(normalizedMessage)) {
-       return "Her profile identifies her as a final-year BSc Information Technology student. Her roadmap says she began the degree at Richfield in 2024, focusing on programming, cloud computing, and data concepts.";
-     }
-
-     if (/\b(experience|work history|freelance|career|professional background)\b/.test(normalizedMessage)) {
-       return "Her profile describes hands-on experience in software development, data analysis, and AI-assisted systems, including freelance assessment of AI-generated code for correctness, logic, and performance.";
-     }
-
-     if (/\b(project|projects)\b/.test(normalizedMessage)) {
-       const projectNames = aboutMe.projects.map(project => typeof project === "string" ? project : Object.keys(project).join(", "));
-       return `Projects listed in her profile:\n${projectNames.map(project => `- ${project}`).join("\n")}`;
-     }
-
-     if (/\b(roadmap|plans|2024|2025|2026)\b/.test(normalizedMessage)) {
-       const entries = roadmap.map(entry => entry.replace(/^\s*(20\d{2} —[^\n]+)/, "## $1"));
-       return entries.join("\n\n");
-     }
-
-     if (/\b(about|who is|tell me about)\b/.test(normalizedMessage) && hasPersonReference) {
-       return aboutText;
-     }
-
-     if (hasPersonReference || /\b(gpa|favorite|favourite|age|salary|address|birthday|hometown)\b/.test(normalizedMessage)) {
-       return chatbotFallback;
-     }
-
-     return null;
    }
 
     const userData = {
@@ -186,14 +128,6 @@ ${JSON.stringify(aboutMe, null, 2)}`;
     } catch (error) {
       console.error(error);
       msgBotElement.textContent = chatbotFallback;
-      incomingMsgDiv.classList.remove("thinking");
-      chatBody.scrollTo({top: chatBody.scrollHeight, behavior: "smooth"});
-      return;
-    }
-
-    const knownResponse = buildKnownProfileResponse(userData.message, aboutMe);
-    if (knownResponse !== null) {
-      renderBotResponse(msgBotElement, knownResponse);
       incomingMsgDiv.classList.remove("thinking");
       chatBody.scrollTo({top: chatBody.scrollHeight, behavior: "smooth"});
       return;
