@@ -9,7 +9,7 @@
 
 body {
   color: #ededed;
-  background: rgb(37, 29, 69);
+  background: rgb(26, 21, 46);
 }
 
 a {
@@ -612,7 +612,7 @@ nav ul li {
 .chat-header {
   display: flex;
   width: 100%;
-  background: #e73d3d;
+  background: #999a9f;
   padding: 15px 22px;
   border-radius: 7px;
   justify-content: space-between;
@@ -865,6 +865,7 @@ nav ul li {
   position: fixed;
   z-index: 2100;
   right: 0;
+  bottom: 0;
   cursor: pointer;
   margin: 20px;
   font-size: 25px;

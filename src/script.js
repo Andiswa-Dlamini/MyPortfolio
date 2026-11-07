@@ -183,9 +183,11 @@ ${JSON.stringify(aboutMe, null, 2)}`;
 
 
 
-  const sendMsg = (userMsg) => { //add sendMsg = (e) hr e.prevent default
+  const sendMsg = () => {
     // create and display outgoing message bubble
     userData.message = msgInput.value.trim();
+    if (!userData.message) return;
+    msgInput.value = "";
     const msgContent = `<div class="message-text"></div>`;
     const outgoingMsgDiv = msgElement(msgContent, "user-message");
     outgoingMsgDiv.querySelector(".message-text").textContent = userData.message;
@@ -218,13 +220,7 @@ ${JSON.stringify(aboutMe, null, 2)}`;
     if (e.key === "Enter") {
         e.preventDefault();
 
-        const userMsg = e.target.value.trim();
-        console.log("User message:", userMsg);
-
-        if (userMsg) {
-            sendMsg(userMsg);
-            msgInput.value = "";
-        }
+        sendMsg();
     }
 
   });
@@ -255,7 +251,6 @@ ${JSON.stringify(aboutMe, null, 2)}`;
 sendbtn.addEventListener("click", (e) => {
     e.preventDefault();     //REPETITIVE - NOT A GOOD PRACTISE DRY
     sendMsg();
-    // msgInput.value = "";
 });
 
   const roadmaplinkElement = document.getElementById("roadmap-link");
